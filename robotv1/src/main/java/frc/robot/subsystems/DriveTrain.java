@@ -64,10 +64,10 @@ public class DriveTrain extends SubsystemBase {
     }
 
     public void setContinuousServo(double speed) {
-        continuousServo.set((speed + 1.0) / 2.0);
+        continuousServoGripper.set((speed + 1.0) / 2.0);
     }
     public void setContinuousServoGripper(double speed) {
-        continuousServo.set((speed + 1.0) / 2.0);
+        continuousServoGripper.set((speed + 1.0) / 2.0);
     }
 
     /**
