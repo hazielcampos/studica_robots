@@ -24,6 +24,8 @@ public class DriveTrain extends SubsystemBase {
     private TitanQuadEncoder backEncoder;
 
     private Servo continuousServo;
+    private Servo continuousServoGripper;
+
 
     private AHRS navX;
 
@@ -57,11 +59,14 @@ public class DriveTrain extends SubsystemBase {
         backMotor.setInverted(false);
 
         continuousServo = new Servo(Constants.SERVO_Z);
-
+        continuousServoGripper = new Servo(Constants.SERVO_X);
 
     }
 
     public void setContinuousServo(double speed) {
+        continuousServo.set((speed + 1.0) / 2.0);
+    }
+    public void setContinuousServoGripper(double speed) {
         continuousServo.set((speed + 1.0) / 2.0);
     }
 

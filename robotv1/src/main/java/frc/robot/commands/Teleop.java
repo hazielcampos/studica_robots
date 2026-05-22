@@ -73,6 +73,13 @@ public class Teleop extends CommandBase {
         } else {
             driveTrain.setContinuousServo(0); // Detener
         }
+        if (oi.getDriveLeftTrigger()) {
+            driveTrain.setContinuousServoGripper(0.5); // Velocidad media adelante
+        } else if (oi.getDriveLeftBumper()) {
+            driveTrain.setContinuousServoGripper(-0.5); // Velocidad media atrás
+        } else {
+            driveTrain.setContinuousServoGripper(0); // Detener
+        }
 
         if(oi.getDriveYButton()) {
             driveTrain.resetEncoders();
